@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Detalle Especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="card">
+            <div class="heart"></div>
+            <h1>Un Detalle Especial</h1>
+            <p class="message">Sabes que me encantas mucho... ❤️</p>
+            <div class="floating-hearts"></div>
+            <div class="buttons-container">
+                <button id="showMessage" class="main-button">
+                    <span class="button-content">
+                        <i class="fas fa-heart"></i>
+                        Haz clic aquí
+                    </span>
+                </button>
+                <button id="showMusic" class="music-button">
+                    <i class="fas fa-music"></i>
+                </button>
+            </div>
+            <div class="music-player">
+                <audio id="backgroundMusic" loop>
+                    <source src="music/head-first.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="stitch-container">
+        <img src="images/stich.png" alt="Stitch" class="stitch">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
