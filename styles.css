@@ -301,4 +301,45 @@ h1 {
         bottom: 10px;
         right: 10px;
     }
+}
+
+.dedication-container {
+    position: fixed;
+    bottom: 20px;
+    left: 80px;
+    width: auto;
+    text-align: left;
+    z-index: 1000;
+}
+
+.dedication {
+    color: #ff6b6b;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    white-space: nowrap;
+    min-width: 150px;
+}
+
+@media (max-width: 480px) {
+    .dedication-container {
+        bottom: 10px;
+        left: 60px;
+        width: calc(100% - 120px);
+    }
+    
+    .dedication {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        min-width: 120px;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 } 
