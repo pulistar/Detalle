@@ -124,44 +124,62 @@ document.addEventListener('DOMContentLoaded', () => {
             }, i * 150);
         }
     }
-});
 
-// Agregar las animaciones
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes float {
-        0% {
-            transform: translateY(0) rotate(0deg) scale(1);
-            opacity: 1;
+    // Funcionalidad para mostrar la foto de Yeilym
+    const dedication = document.getElementById('dedication');
+    const yeilymPhoto = document.getElementById('yeilymPhoto');
+    let photoTimeout;
+
+    dedication.addEventListener('click', () => {
+        // Limpiar el timeout anterior si existe
+        clearTimeout(photoTimeout);
+        
+        // Mostrar la foto
+        yeilymPhoto.classList.add('show');
+        
+        // Ocultar la foto después de 2 segundos
+        photoTimeout = setTimeout(() => {
+            yeilymPhoto.classList.remove('show');
+        }, 2000);
+    });
+
+    // Agregar las animaciones
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
         }
-        50% {
-            transform: translateY(-50px) rotate(180deg) scale(1.2);
-            opacity: 0.8;
-        }
-        100% {
-            transform: translateY(-100px) rotate(360deg) scale(0);
+
+        .card {
             opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-    }
 
-    .card {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1.5s infinite;
+        }
 
-    .star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        animation: twinkle 1.5s infinite;
-    }
-
-    @keyframes twinkle {
-        0%, 100% { opacity: 0.2; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.5); }
-    }
-`;
-document.head.appendChild(style); 
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+    `;
+    document.head.appendChild(style); 
+}); 
