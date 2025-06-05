@@ -181,5 +181,5 @@ document.addEventListener('DOMContentLoaded', () => {
             50% { opacity: 1; transform: scale(1.5); }
         }
     `;
-    document.head.appendChild(style); 
+    document.head.appendChild(style);
 }); 
